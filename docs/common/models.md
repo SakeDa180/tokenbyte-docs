@@ -4,7 +4,7 @@
 
 `GET` `https://api.tokenbyte.ai/v1/models`
 
-返回当前 API Key 所属分组、模型白名单和账号权限共同允许的模型。后续请求中的 `model` 必须使用响应中的完整 `id`。
+返回当前 API Key 所属分组、模型白名单和账号权限 共同允许的模型。后续请求中的 `model` 必须使用响应中的完整 `id`。
 
 ## 请求头
 
@@ -72,6 +72,4 @@ console.log((await client.models.list()).data);
 }
 ```
 </details>
-
-
 
