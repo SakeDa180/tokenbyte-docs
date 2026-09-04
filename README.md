@@ -23,7 +23,7 @@
 登录后 进入控制台 -> API 密钥管理，点击 新建 API 密钥（建议为每个应用或环境单独创建一个 Key，并配置合适的速率限制）。
 
 ### 3. 发起请求
-3. TokenByte 的基础 URL 是 https://api.tokenbyte.ai/v1。所有示例中的 model 请替换为你在 模型广场 或 控制台 -> 模型市场 看到的模型ID。
+3. TokenByte 的基础 URL 是 https://api.tokenbyte.ai/v1 所有示例中的 model 请替换为你在 模型广场 或 控制台 -> 模型市场 看到的模型ID。
 
 ---
 
