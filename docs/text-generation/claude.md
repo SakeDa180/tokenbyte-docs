@@ -6,7 +6,7 @@
 
 `GET` `https://api.tokenbyte.ai/v1/messages`
 
-返回当前 API Key 所属分组、模型白名单和账号权限 共同允许的模型。后续请求中的 `model` 必须使用响应中的完整 `id`。模型列表请查看TokenByte支持的所有[AI 模型](https://tokenbyte.ai/)
+返回当前 API Key 所属分组、模型白名单和账号权限 共同允许的模型。后续请求中的 `model` 必须使用响应中的完整 `id`，模型列表请查看TokenByte支持的所有[AI 模型](https://tokenbyte.ai/)。
 
 
 
