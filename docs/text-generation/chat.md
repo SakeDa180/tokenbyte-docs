@@ -50,7 +50,7 @@ curl https://api.tokenbyte.ai/v1/chat/completions \
   -H "Content-Type: application/json" \
   -d '{
     "model": "<model-id>",
-    "messages": [{"role":"user","content":"你好"}]
+    "messages": [{"role":"user","content":"Hello"}]
   }'
 ```
 </details>
@@ -64,7 +64,7 @@ from openai import OpenAI
 client = OpenAI(base_url="https://api.tokenbyte.ai/v1", api_key="YOUR_KEY")
 result = client.chat.completions.create(
     model="<model-id>",
-    messages=[{"role": "user", "content": "你好"}],
+    messages=[{"role": "user", "content": "Hello"}],
 )
 print(result.choices[0].message.content)
 ```
@@ -76,7 +76,7 @@ print(result.choices[0].message.content)
 ```bash
 const result = await client.chat.completions.create({
   model: "<model-id>",
-  messages: [{ role: "user", content: "你好" }],
+  messages: [{ role: "user", content: "Hello" }],
 });
 ```
 </details>
@@ -92,7 +92,7 @@ const result = await client.chat.completions.create({
   "choices": [
     {
       "index": 0,
-      "message": { "role": "assistant", "content": "你好！" },
+      "message": { "role": "assistant", "content": "Hello" },
       "finish_reason": "stop"
     }
   ],
