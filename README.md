@@ -6,7 +6,7 @@
   <a href="mailto:support@tokenbyte.ai">联系支持</a>
 </p>
 
-TokenByte 是一个高效、稳定的 AI 模型 API 聚合与分发平台。本文档旨在帮助开发者快速了解并接入 TokenByte 服务。
+TokenByte 是一个高效、稳定的 AI 模型聚合与分发平台。本文档旨在帮助开发者快速了解并接入 TokenByte 服务。
 
 ---
 
