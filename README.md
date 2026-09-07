@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="https://tokenbyte.ai/">官网</a> •
-  <a href="https://api.tokenbyte.ai/v1">API 节点</a> •
+  <a href="https://tokenbyte.ai/models/"</a> •
   <a href="mailto:support@tokenbyte.ai">联系支持</a>
 </p>
 
