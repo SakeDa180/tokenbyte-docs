@@ -8,14 +8,14 @@
 
 
 ## Header 参数
-| 状态 | 说明 | 说明 |
+| 状态 | 必填 | 说明 |
 | :--- | :--- | :--- |
 | `Authorization` | 是 | `Bearer <TOKENBYTE_API_KEY>` |
 | `Content-Type` | 是 | `application/json` |
 
 
 ## Body 参数
-| 状态 | 说明 | 说明 | 说明 |
+| 状态 | 类型 | 必填 | 说明 |
 | :--- | :--- | :--- | :--- |
 | `model` | string | 是 | Doubao 模型的完整 ID |
 | `_action` | string | 视模型 | 当前模式使用 `generate` |
