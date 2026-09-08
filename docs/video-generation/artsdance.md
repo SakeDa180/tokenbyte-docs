@@ -7,7 +7,7 @@
 ArtsDance 采用异步任务模式：本接口提交任务并返回 task_id，随后调用[查询视频任务](/docs/common/video-task.md)获取结果。模型列表请查看TokenByte支持的所有[AI 模型](https://tokenbyte.ai/models/)。
 
 
-## Body 参数
+## Header 参数
 | 参数 | 必填 | 说明 |
 | :--- | :--- | :--- |
 | `Authorization` | 是 | Bearer <TOKENBYTE_API_KEY> |
@@ -16,26 +16,20 @@ ArtsDance 采用异步任务模式：本接口提交任务并返回 task_id，�
 ## Body 参数
 | 参数 | 类型 | 必填 | 说明 |
 | :--- | :--- | :--- | :--- |
-| `model` | string | 是 | 模型完整 ID |
-| `messages` | array | 是 | 按时间顺序排列的消息 |
-| `stream` | boolean | 否 | 是否使用 SSE 增量响应 |
-| `temperature` | number | 否 | 采样随机度，支持范围取决于模型 |
-| `max_tokens` | integer | 否 | 最大输出 Token 数 |
-| `max_completion_tokens` | integer | 否 | 新版模型的最大输出 Token 数 |
-| `top_p` | integer | 否 | 核采样概率阈值 |
-| `stop` | string/array | 否 | 停止生成的字符串 |
-| `response_format` | object | 否 | 文本、JSON 对象或 JSON Schema |
-| `tools` | array | 否 | OpenAI 函数工具声明 |
-| `tool_choice` | string/object | 否 | 工具选择方式 |
-
-### messages
-
-每条消息至少包含 role 和 content。支持的多模态内容与特殊字段以模型专题页为准。
-role 可为 system、user、assistant 或 tool。工具结果使用 tool_call_id 与助手消息中的调用关联。
+| `model` | string | 是 | 模型列表中的 ArtsDance 模型 ID |
+| `prompt` | string | 是 | 场景、运动、镜头与风格描述 |
+| `image` | string | 否 | 图生视频参考图 URL 或 Base64；文生视频不传 |
+| `duration` | integer | 否 | 视频时长，支持值取决于模型 |
+| `aspect_ratio` | string | 否 | 如 `16:9`、`9:16`、`1:1` |
+| `resolution` | string | 否 | 输出分辨率档位 |
+| `seed` | integer | 否 | 渠道支持时控制随机种子 |
+| `generate_audio` | boolean | 否 | 模型支持时控制音频生成 |
 
 
-## Body 参数
-设置 `stream: true` 后，接口通过 SSE 返回 `chat.completion.chunk`。逐块读取 `choices[0].delta`，收到 `data: [DONE]` 后结束。需要在最后一个数据块获取用量时，可设置 `stream_options.include_usage: true`。
+### 提示词建议
+按“主体动作 + 环境变化 + 镜头运动 + 光线风格”组织提示词。图生视频时避免描述与参考图主体明显冲突的外观细节。
+> [!WARNING]
+> 参数枚举会随 ArtsDance 模型版本变化。模型不支持的时长、分辨率或音频选项会返回参数错误，请以模型卡片和错误信息为准。
 
 
 ## 示例代码
@@ -43,13 +37,29 @@ role 可为 system、user、assistant 或 tool。工具结果使用 tool_call_id
 <summary><b>cURL</b></summary>
 
 ```bash
-curl https://api.tokenbyte.ai/v1/chat/completions \
+curl https://api.tokenbyte.ai/api/v1/video/generation \
   -H "Authorization: Bearer $TOKENBYTE_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
-    "model": "<model-id>",
-    "messages": [{"role":"user","content":"Hello"}]
+    "model":"<artsdance-model-id>",
+    "prompt":"无人机穿过晨雾中的峡谷，缓慢前推，电影感",
+    "duration":5,
+    "aspect_ratio":"16:9"
   }'
+```
+</details>
+
+<details open>
+<summary><b>图生视频</b></summary>
+
+```bash
+{
+  "model": "<artsdance-model-id>",
+  "prompt": "人物转身看向镜头，头发随风摆动",
+  "image": "https://example.com/reference.png",
+  "duration": 5,
+  "aspect_ratio": "9:16"
+}
 ```
 </details>
 
@@ -57,44 +67,25 @@ curl https://api.tokenbyte.ai/v1/chat/completions \
 <summary><b>Python</b></summary>
 
 ```bash
-from openai import OpenAI
+import requests
 
-client = OpenAI(base_url="https://api.tokenbyte.ai/v1", api_key="YOUR_KEY")
-result = client.chat.completions.create(
-    model="<model-id>",
-    messages=[{"role": "user", "content": "Hello"}],
-)
-print(result.choices[0].message.content)
+result = requests.post(
+    "https://api.tokenbyte.ai/api/v1/video/generation",
+    headers={"Authorization": "Bearer YOUR_KEY"},
+    json={"model": "<artsdance-model-id>", "prompt": "云海日出"},
+).json()
+print(result["data"]["task_id"])
 ```
 </details>
-
-<details open>
-<summary><b>JavaScript</b></summary>
-
-```bash
-const result = await client.chat.completions.create({
-  model: "<model-id>",
-  messages: [{ role: "user", content: "Hello" }],
-});
-```
-</details>
-
 
 <details open>
 <summary><b>200</b></summary>
 
 ```bash
 {
-  "id": "chatcmpl_xxx",
-  "object": "chat.completion",
-  "choices": [
-    {
-      "index": 0,
-      "message": { "role": "assistant", "content": "Hello" },
-      "finish_reason": "stop"
-    }
-  ],
-  "usage": { "prompt_tokens": 8, "completion_tokens": 4, "total_tokens": 12 }
+  "code": 0,
+  "data": { "task_id": "video_xxx", "task_status": "pending" },
+  "message": "success"
 }
 ```
 </details>
