@@ -48,50 +48,8 @@ curl https://api.tokenbyte.ai/v1/images/generations \
     "size":"1024x1024"
   }'
 ```
-```bash
-{
-  "created": 1770000000,
-  "data": [{ "url": "https://.../image.png" }],
-  "usage": { "total_tokens": 0 }
-}
-```
 </details>
 
-<details open>
-<summary><b>Python</b></summary>
+若响应直接包含 `urls`，可立即读取结果；若返回 `task_id`，请调用查询图像任务直到进入成功或失败终态。
 
-```bash
-result = client.images.generate(
-    model="<gpt-image-model-id>",
-    prompt="雨夜霓虹街道，电影感广角镜头",
-    size="1024x1024",
-)
-print(result.data[0].b64_json or result.data[0].url)
-```
-```bash
-{
-  "created": 1770000000,
-  "data": [{ "url": "https://.../image.png" }],
-  "usage": { "total_tokens": 0 }
-}
-```
-</details>
 
-<details open>
-<summary><b>JavaScript</b></summary>
-
-```bash
-const result = await client.images.generate({
-  model: "<gpt-image-model-id>",
-  prompt: "雨夜霓虹街道，电影感广角镜头",
-  size: "1024x1024",
-});
-```
-```bash
-{
-  "created": 1770000000,
-  "data": [{ "url": "https://.../image.png" }],
-  "usage": { "total_tokens": 0 }
-}
-```
-</details>
