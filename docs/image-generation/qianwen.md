@@ -5,7 +5,7 @@
 
 `POST` `https://api.tokenbyte.ai/api/v1/image/generation`
 
-使用 TokenByte 统一图像任务接口调用 Qwen 的图像生成同步调用能力。模型名称请从模型市场复制，不要根据厂商官网名称自行推测。
+使用 TokenByte 统一图像任务接口调用 Qwen 的图像生成同步调用能力。模型名称请从 [模型市场](https://tokenbyte.ai/models/) 复制，不要根据厂商官网名称自行推测。
 
 
 ### Header 参数
@@ -63,6 +63,7 @@ curl https://api.tokenbyte.ai/api/v1/image/generation \
   "request_id": "req_xxx"
 }
 ```
+若响应直接包含 `urls`，可立即读取结果；若返回 `task_id`，请调用 [查询图像任务](/docs/common/image-task.md) 直到进入成功或失败终态。
 
 ---
 
@@ -71,7 +72,7 @@ curl https://api.tokenbyte.ai/api/v1/image/generation \
 
 `POST` `https://api.tokenbyte.ai/api/v1/image/generation`
 
-使用 TokenByte 统一图像任务接口调用 Qwen 的图像生成同步调用能力。模型名称请从模型市场复制，不要根据厂商官网名称自行推测。
+使用 TokenByte 统一图像任务接口调用 Qwen 的图像生成同步调用能力。模型名称请从 [模型市场](https://tokenbyte.ai/models/) 复制，不要根据厂商官网名称自行推测。
 
 
 ### Header 参数
@@ -129,6 +130,7 @@ curl https://api.tokenbyte.ai/api/v1/image/generation \
   "request_id": "req_xxx"
 }
 ```
+若响应直接包含 `urls`，可立即读取结果；若返回 `task_id`，请调用 [查询图像任务](/docs/common/image-task.md) 直到进入成功或失败终态。
 
 ---
 
@@ -137,7 +139,7 @@ curl https://api.tokenbyte.ai/api/v1/image/generation \
 
 `POST` `https://api.tokenbyte.ai/api/v1/image/generation`
 
-使用 TokenByte 统一图像任务接口调用 Qwen 的图像编辑同步调用能力。模型名称请从模型市场复制，不要根据厂商官网名称自行推测。
+使用 TokenByte 统一图像任务接口调用 Qwen 的图像编辑同步调用能力。模型名称请从 [模型市场](https://tokenbyte.ai/models/) 复制，不要根据厂商官网名称自行推测。
 
 
 ### Header 参数
@@ -198,7 +200,7 @@ curl https://api.tokenbyte.ai/api/v1/image/generation \
 ```
 </details>
 
-若响应直接包含 `urls`，可立即读取结果；若返回 `task_id`，请调用查询图像任务直到进入成功或失败终态。
+若响应直接包含 `urls`，可立即读取结果；若返回 `task_id`，请调用 [查询图像任务](/docs/common/image-task.md) 直到进入成功或失败终态。
 
 
 
