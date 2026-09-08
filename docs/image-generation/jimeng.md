@@ -4,7 +4,7 @@
 
 `POST` `https://api.tokenbyte.ai/api/v1/image/generation`
 
-使用 TokenByte 统一图像任务接口调用 Jimeng 的图片生成能力。模型名称请从模型市场复制，不要根据厂商官网名称自行推测。
+使用 TokenByte 统一图像任务接口调用 Jimeng 的图片生成能力。模型名称请从 [模型市场](https://tokenbyte.ai/models/) 复制，不要根据厂商官网名称自行推测。
 
 
 ## Header 参数
