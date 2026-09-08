@@ -67,4 +67,4 @@ print(result.data[0].b64_json or result.data[0].url)
 ```
 </details>
 
-若响应直接包含 `urls`，可立即读取结果；若返回 `task_id`，请调用 [查询图像任务](docs/common/image-task.md) 直到进入成功或失败终态。
+若响应直接包含 `urls`，可立即读取结果；若返回 `task_id`，请调用 [查询图像任务](/SakeDa180/tokenbyte-docs/blob/main/docs/common/image-task.md) 直到进入成功或失败终态。
