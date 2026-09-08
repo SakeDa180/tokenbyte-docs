@@ -9,7 +9,7 @@
 
 
 
-## Body 参数
+## Header 参数
 | 参数 | 必填 | 说明 |
 | :--- | :--- | :--- |
 | `Authorization` | 是 | Bearer <TOKENBYTE_API_KEY> |
