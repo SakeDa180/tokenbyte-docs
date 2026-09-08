@@ -17,7 +17,7 @@
 ## Body 参数
 | 状态 | 类型 | 必填 | 说明 |
 | :--- | :--- | :--- | :--- |
-| `model` | string | 是 | Doubao 模型的完整 ID |
+| `model` | string | 是 | Vidu 模型的完整 ID |
 | `_action` | string | 视模型 | 当前模式使用 `generate` |
 | `prompt` | string | 视模型 | 生成或编辑提示词 |
 | `image` | string/object/array | 否 | 参考图 URL、Base64 或厂商结构化图片对象 |
@@ -26,7 +26,7 @@
 
 
 ## 模式说明
-输入通常使用扁平字段或 content 内容数组，具体支持项取决于所选模型。
+Vidu 不同系列的参考图数量、时长、分辨率和音频能力不同。
 
 仅传入模型明确支持的字段；不支持的参数可能被忽略或返回参数错误。
 
@@ -63,7 +63,6 @@ curl https://api.tokenbyte.ai/api/v1/image/generation \
   "message": "success",
   "request_id": "req_xxx"
 }
-print(result.data[0].b64_json or result.data[0].url)
 ```
 </details>
 
