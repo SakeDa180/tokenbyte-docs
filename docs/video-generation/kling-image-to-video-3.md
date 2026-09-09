@@ -16,7 +16,7 @@
 | 参数 | 类型 | 必填 | 说明 |
 | :--- | :--- | :--- | :--- |
 | `model` | string | 是 | Kling 模型的完整 ID |
-| `_action` | string | 视模型 | 当前模式使用 `t2v` |
+| `_action` | string | 视模型 | 当前模式使用 `i2v` |
 | `prompt` | string | 视模型 | 生成或编辑提示词 |
 | `image` | string/object/array | 是 | 参考图 URL、Base64 或厂商结构化图片对象 |
 | `headtailImages` | object | 首尾帧模式 | 首帧与尾帧图片 |
