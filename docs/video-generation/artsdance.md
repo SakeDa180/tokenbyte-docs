@@ -2,7 +2,7 @@
 
 提交 ArtsDance 文生视频或图生视频任务
 
-`GET` `https://api.tokenbyte.ai/api/v1/video/generation`
+`POST` `https://api.tokenbyte.ai/api/v1/video/generation`
 
 ArtsDance 采用异步任务模式：本接口提交任务并返回 task_id，随后调用[查询视频任务](/docs/common/video-task.md)获取结果。模型列表请查看TokenByte支持的所有[AI 模型](https://tokenbyte.ai/models/)。
 
