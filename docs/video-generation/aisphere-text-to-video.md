@@ -65,4 +65,4 @@ curl https://api.tokenbyte.ai/api/v1/video/generation \
 ```
 </details>
 
-若响应直接包含 `urls`，可立即读取结果；若返回 `task_id`，请调用查询视频任务直到进入成功或失败终态。
+若响应直接包含 `urls`，可立即读取结果；若返回 `task_id`，请调用[查询视频任务](/docs/common/video-task.md)直到进入成功或失败终态。
