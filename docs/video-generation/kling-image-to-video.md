@@ -19,7 +19,7 @@
 | `model` | string | 是 | Jimeng 模型的完整 ID |
 | `_action` | string | 视模型 | 当前模式使用 `t2v` |
 | `prompt` | string | 视模型 | 生成或编辑提示词 |
-| `image` | string/object/array | 否 | 参考图 URL、Base64 或厂商结构化图片对象 |
+| `image` | string/object/array | 是 | 参考图 URL、Base64 或厂商结构化图片对象 |
 | `headtailImages` | object | 首尾帧模式 | 首帧与尾帧图片 |
 | `characterImages` | array | 参考模式 | 主体或风格参考图片 |
 | `duration` | integer | 否 | 视频时长，枚举取决于模型 |
