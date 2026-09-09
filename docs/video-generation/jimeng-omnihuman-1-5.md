@@ -16,7 +16,7 @@
 ## Body 参数
 | 参数 | 类型 | 必填 | 说明 |
 | :--- | :--- | :--- | :--- |
-| `model` | string | 是 | Jimeng 模型的完整 ID |
+| `model` | string | 是 | kling 模型的完整 ID |
 | `_action` | string | 视模型 | 当前模式使用 `t2v` |
 | `prompt` | string | 视模型 | 生成或编辑提示词 |
 | `image` | string/object/array | 是 | 参考图 URL、Base64 或厂商结构化图片对象 |
@@ -55,16 +55,19 @@ curl https://api.tokenbyte.ai/api/v1/video/generation \
 <summary><b>200</b></summary>
 
 ```bash
-{
-  "code": 0,
-  "data": {
-    "task_id": "video_xxx",
-    "task_status": "pending",
-    "urls": []
+curl https://api.tokenbyte.ai/api/v1/video/generation \
+  -H "Authorization: Bearer $TOKENBYTE_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+  "_action": "i2v",
+  "model": "<model-id>",
+  "prompt": "描述主体、动作、场景和镜头",
+  "image": {
+    "imageUrl": "https://example.com/start.png"
   },
-  "message": "success",
-  "request_id": "req_xxx"
-}
+  "duration": 5,
+  "resolution": "720p"
+}'
 ```
 </details>
 
