@@ -4,7 +4,7 @@
 
 `GET` `https://api.tokenbyte.ai/api/v1/video/generation`
 
-使用 TokenByte 统一视频任务接口调用 Doubao 的视频生成能力，随后调用[查询视频任务](/docs/common/video-task.md)获取结果。模型列表请查看TokenByte支持的所有[AI 模型](https://tokenbyte.ai/models/)。
+使用 TokenByte 统一视频任务接口调用 Doubao 的视频生成能力。模型列表请查看TokenByte支持的所有[AI 模型](https://tokenbyte.ai/models/)。
 
 
 ## Header 参数
@@ -67,4 +67,4 @@ curl https://api.tokenbyte.ai/api/v1/video/generation \
 ```
 </details>
 
-若响应直接包含 `urls`，可立即读取结果；若返回 `task_id`，请调用[查询视频任务]()直到进入成功或失败终态。
+若响应直接包含 `urls`，可立即读取结果；若返回 `task_id`，请调用[查询视频任务](/docs/common/video-task.md)直到进入成功或失败终态。
