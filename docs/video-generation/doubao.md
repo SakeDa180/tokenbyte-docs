@@ -2,7 +2,7 @@
 
 使用 TokenByte 调用 豆包 视频生成接口
 
-`GET` `https://api.tokenbyte.ai/api/v1/video/generation`
+`POST` `https://api.tokenbyte.ai/api/v1/video/generation`
 
 使用 TokenByte 统一视频任务接口调用 Doubao 的视频生成能力。模型列表请查看TokenByte支持的所有[AI 模型](https://tokenbyte.ai/models/)。
 
