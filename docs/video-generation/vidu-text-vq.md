@@ -40,7 +40,7 @@ curl https://api.tokenbyte.ai/api/v1/video/generation \
   -H "Authorization: Bearer $TOKENBYTE_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
-  "_action": "t2v",
+  "_action": "i2v",
   "model": "<model-id>",
   "prompt": "描述主体、动作、场景和镜头",
   "duration": 5,
