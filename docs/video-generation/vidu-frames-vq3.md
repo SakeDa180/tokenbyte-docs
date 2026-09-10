@@ -4,7 +4,7 @@
 
 `POST` `https://api.tokenbyte.ai/api/v1/video/generation`
 
-使用 TokenByte 统一视频任务接口调用 Vidu 的单图 / 首尾帧 VQ3P / VQ3T能力。模型名称请从模型市场复制，不要根据厂商官网名称自行推测。
+使用 TokenByte 统一视频任务接口调用 Vidu 的单图 / 首尾帧 VQ3P / VQ3T能力。模型名称请查看TokenByte支持的所有[AI 模型](https://tokenbyte.ai/models/)，不要根据厂商官网名称自行推测。
 
 
 ## Header 参数
