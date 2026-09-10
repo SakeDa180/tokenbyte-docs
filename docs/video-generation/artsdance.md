@@ -4,7 +4,7 @@
 
 `POST` `https://api.tokenbyte.ai/api/v1/video/generation`
 
-ArtsDance 采用异步任务模式：本接口提交任务并返回 task_id，随后调用[查询视频任务](/docs/common/video-task.md)获取结果。模型列表请查看TokenByte支持的所有[AI 模型](https://tokenbyte.ai/models/)。
+ArtsDance 采用异步任务模式：本接口提交任务并返回 task_id，随后调用[查询视频任务](/docs/common/video-task.md)获取结果。模型名称请查看TokenByte支持的所有[AI 模型](https://tokenbyte.ai/models/)，不要根据厂商官网名称自行推测。
 
 
 ## Header 参数
