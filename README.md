@@ -76,7 +76,7 @@ curl https://api.tokenbyte.ai/v1/chat/completions \
 
 完全兼容。在使用 Python/Node.js 的 OpenAI 官方 SDK 时，只需将 base_url 改为 `https://api.tokenbyte.ai/v1`，并将 api_key 替换为 TokenByte 生成的 Key 即可直接运行。
 
-### Q4: 请求遇到 429 Too Many Requests 或频率限制怎么办？
+### Q4: 请求多次遇到 429 或 频率限制 怎么办？
 
 出现该错误通常是因为触发了该 API Key 配置的 Rate Limit（每分钟请求数/Token 限制）或账户余额不足。
 
