@@ -1,10 +1,10 @@
-# Van 参考生视频 2.6
+# Van 文生视频 2.7
 
-使用 TokenByte 调用 万相 参考生视频 2.6接口
+使用 TokenByte 调用 万相 文生视频 2.7接口
 
 `POST` `https://api.tokenbyte.ai/api/v1/video/generation`
 
-使用 TokenByte 统一视频任务接口调用 Wan 的参考生视频 2.6能力。模型名称请从模型市场复制，不要根据厂商官网名称自行推测。
+使用 TokenByte 统一视频任务接口调用 Wan 的文生视频 2.7能力。模型名称请从模型市场复制，不要根据厂商官网名称自行推测。
 
 
 ## Header 参数
@@ -17,7 +17,7 @@
 | 参数 | 类型 | 必填 | 说明 |
 | :--- | :--- | :--- | :--- |
 | `model` | string | 是 | Vidu 模型的完整 ID |
-| `_action` | string | 视模型 | 当前模式使用 `i2v` |
+| `_action` | string | 视模型 | 当前模式使用 `t2v` |
 | `prompt` | string | 视模型 | 生成或编辑提示词 |
 | `image` | string/object/array | 是 | 参考图 URL、Base64 或厂商结构化图片对象 |
 | `headtailImages` | object | 首尾帧模式 | 首帧与尾帧图片 |
@@ -40,12 +40,9 @@ curl https://api.tokenbyte.ai/api/v1/video/generation \
   -H "Authorization: Bearer $TOKENBYTE_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
-  "_action": "i2v",
+  "_action": "t2v",
   "model": "<model-id>",
   "prompt": "描述主体、动作、场景和镜头",
-  "image": {
-    "imageUrl": "https://example.com/start.png"
-  },
   "duration": 5,
   "resolution": "720p"
 }'
